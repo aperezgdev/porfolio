@@ -1,0 +1,37 @@
+---
+import Navbar from "../components/Navbar.astro"
+import '@fontsource/inter'
+
+const {title} = Astro.props
+---
+
+<html lang=es>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Navbar/>
+    <main id="content">
+      <slot/>
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+  #content {
+    width: 50vw;
+    margin: auto auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main > article {
+    margin-bottom: 7rem;
+  }
+</style>
