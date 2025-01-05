@@ -1,0 +1,50 @@
+---
+import LinkButton from "../common/LinkButton.astro";
+import GithubIcon from "../icons/GithubIcon.astro";
+import GolangIcon from "../icons/GolangIcon.astro";
+import LinkIcon from "../icons/LinkIcon.astro";
+import ReactIcon from "../icons/ReactIcon.astro";
+import ProjectBadge from "./ProjectBadge.astro";
+import ProjectCard from "./ProjectCard.astro";
+---
+
+<ProjectCard name="Social Readers">
+  <div class="project-badges-list" slot="badge-list">
+      <ProjectBadge style="background-color: #2190FF; color: white;">
+        <GolangIcon/>
+        Golang
+      </ProjectBadge>
+      <ProjectBadge style="color: #00D8FF;">
+        <ReactIcon/>
+        React
+      </ProjectBadge>
+  </div>
+  <p>
+    Pequeña red social enfocada en los amantes de los libros. Comparte, comenta, recomienda 
+    diferentes libros, encuentra tu siguiente libro para leer y escribe reviews sobre ellos.
+  </p>
+  <p>
+    El objetivo de este proyecto era comprobar la escalibidad que podia conseguir creando una 
+    aplicación con la cantidad de usuarios concurrentes que puede llegar a tener una red social.
+  </p>
+  <div class="project-link">
+    <LinkButton link="github.com" style="color: white; background-color: black;">
+      <GithubIcon style="fill: white;"/> Code
+    </LinkButton>
+    <LinkButton link="/">
+      <LinkIcon/> Visitar
+    </LinkButton>
+  </div>
+</ProjectCard>
+
+<style>
+  .project-badges-list {
+    display: flex;
+    gap: 1rem;
+    margin-top: -1rem;
+  }
+  .project-link {
+    display: flex;
+    gap: 1rem;
+  }
+</style>

@@ -1,0 +1,33 @@
+---
+const {name} = Astro.props 
+---
+
+<article class="project">
+  <div class="image-project"></div>
+  <div class="description-project">
+    <h3>{name}</h3>
+    <slot name="badge-list"/>
+    <slot/>
+  </div>
+</article>
+
+<style>
+  .image-project {
+    width: 30rem;
+    height: auto;
+    background-color: rgb(218,218,218);
+  }
+  .project {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+
+  .description-project {
+    margin-left: 1rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+  }
+</style>

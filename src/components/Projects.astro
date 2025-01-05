@@ -1,0 +1,23 @@
+---
+import SocialReadersProject from "./Projects/SocialReadersProject.astro"
+import Title from "./common/Title.astro"
+
+---
+
+<article id="projects">
+  <Title>
+    Proyectos
+  </Title>
+  <div id="projects-list">
+    <SocialReadersProject/>
+    <SocialReadersProject/>
+  </div>
+</article>
+
+<style>
+  #projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+</style>

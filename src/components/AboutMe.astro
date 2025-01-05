@@ -1,12 +1,14 @@
 ---
 import GithubIcon from "./icons/GithubIcon.astro";
 import LinkedInIcon from "./icons/LinkedInIcon.astro";
-import Title from "./Title.astro";
+import Title from "./common/Title.astro";
 ---
 
 <article id="aboutme">
   <div id="presentation">
-    <Title title="Álex Pérez García"/>
+    <Title>
+      Álex Pérez García
+    </Title>
     <h3>Desarrollador Backend</h3>
     <article>
       <p>
@@ -19,8 +21,12 @@ import Title from "./Title.astro";
         permite seguir aprendiendo y expandiendo mis habilidades técnicas.
       </p>
       <div id="social">
-        <GithubIcon />
-        <LinkedInIcon />
+        <a href="https://github.com/aperezgdev" target="_blank">
+          <GithubIcon />
+        </a>
+        <a href="https://linkedin.com/in/aperezgdev" target="_blank">
+          <LinkedInIcon />
+        </a>
       </div>
     </article>
   </div>

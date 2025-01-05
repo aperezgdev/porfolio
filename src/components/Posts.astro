@@ -1,0 +1,17 @@
+---
+import Title from "./common/Title.astro"
+import PostCard from "./Posts/PostCard.astro"
+---
+
+<Title>Publicaciones</Title>
+<div id="posts-list">
+  <PostCard/>
+</div>
+
+<style>
+  #posts-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 15rem;
+  }
+</style>
