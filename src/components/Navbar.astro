@@ -1,18 +1,66 @@
+<script>
+  const navLinks = document.querySelectorAll('nav > a')
+  window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll<HTMLElement>('main > article')
+
+    let currentSection = ''
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop
+      if (pageYOffset >= sectionTop - 100) {
+        currentSection = section.getAttribute('id') || ''
+      }
+    });
+
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      currentSection = sections[sections.length - 1].getAttribute('id') || ''
+    }
+
+    if(currentSection === '') return
+
+    navLinks.forEach(link => {
+      link.classList.remove('active')
+      const href = link.getAttribute('href')
+      if (href && href.substring(1) === currentSection) {
+        link.classList.add('active')
+      }
+    })
+  })
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', (ev) => {
+      const clickedLink = ev.target
+      if(clickedLink) {
+        const activeLink = document.querySelector('.active')
+        if (activeLink) {
+          (clickedLink as HTMLElement).classList.toggle('active')
+          activeLink.classList.toggle('active')
+        }
+      }
+    })
+  })
+</script>
+
+
 <header>
   <div>
     <span>
     APEREZG.DEV
     </span>
     <nav>
-      <a href="#aboutme">Sobre mi</a>
+      <a class="active" href="#aboutme">Sobre mi</a>
       <a href="#experience">Carrera</a>
-      <a>Proyectos</a>
-      <a>Publicaciones</a>
+      <a href="#projects">Proyectos</a>
+      <a href="#posts">Publicaciones</a>
     </nav>
   </div>
 </header>
 
 <style>
+  .active {
+    color: black;
+  }
+
   header {
     margin-bottom: 4rem;
     position: sticky;
