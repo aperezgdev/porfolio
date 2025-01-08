@@ -44,9 +44,11 @@
 
 <header>
   <div>
+    <a id="home-link" href="/">
     <span>
     APEREZG.DEV
     </span>
+  </a>
     <nav>
       <a class="active" href="#aboutme">Sobre mi</a>
       <a href="#experience">Carrera</a>
@@ -73,7 +75,7 @@
     margin: auto auto;
     justify-content: space-between;
   }
-  nav {
+  header {
     display: flex;
   }
   a {
@@ -88,6 +90,12 @@
   a:hover {
     color: black;
   }
+
+  a#home-link {
+    text-decoration: none;
+    color: black;
+  }
+
   span {
     font-weight: 600;
   }

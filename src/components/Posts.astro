@@ -1,12 +1,19 @@
 ---
+import { getCollection } from "astro:content"
 import Title from "./common/Title.astro"
 import PostCard from "./Posts/PostCard.astro"
+
+const posts = await getCollection('posts')
 ---
 
 <article id="posts">
   <Title>Publicaciones</Title>
   <div id="posts-list">
-    <PostCard/>
+    {
+      posts.map(post => 
+        <PostCard slug={post.data.slug} title={post.data.title}/>
+      )
+    }
   </div>
 </article>
 
