@@ -1,7 +1,6 @@
 ---
 id: "hello-world"
-title: "Hello World 👋"
-slug: "hello-world"
+title: "Hello World"
 ---
 
 Post de prueba

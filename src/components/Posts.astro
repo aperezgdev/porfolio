@@ -11,7 +11,7 @@ const posts = await getCollection('posts')
   <div id="posts-list">
     {
       posts.map(post => 
-        <PostCard slug={post.data.slug} title={post.data.title}/>
+        <PostCard id={post.data.id} title={post.data.title}/>
       )
     }
   </div>
