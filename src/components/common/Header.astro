@@ -1,0 +1,37 @@
+<header>
+  <div>
+    <a id="home-link" href="/">
+    <span>
+    APEREZG.DEV
+    </span>
+  </a>
+    <slot/>
+  </div>
+</header>
+
+<style>
+  header {
+    margin-bottom: 4rem;
+    position: sticky;
+    top: 0;
+  }
+  header > div {
+    display: flex;
+    padding: 1rem;
+    width: 70vw;
+    margin: auto auto;
+    justify-content: space-between;
+  }
+  header {
+    display: flex;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  span {
+    font-weight: 600;
+  }
+</style>

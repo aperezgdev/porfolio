@@ -7,7 +7,7 @@
 
     sections.forEach(section => {
       const sectionTop = section.offsetTop
-      if (pageYOffset >= sectionTop - 100) {
+      if (scrollY >= sectionTop - 100) {
         currentSection = section.getAttribute('id') || ''
       }
     });
@@ -42,42 +42,18 @@
 </script>
 
 
-<header>
-  <div>
-    <a id="home-link" href="/">
-    <span>
-    APEREZG.DEV
-    </span>
-  </a>
-    <nav>
-      <a class="active" href="#aboutme">Sobre mi</a>
-      <a href="#experience">Carrera</a>
-      <a href="#projects">Proyectos</a>
-      <a href="#posts">Publicaciones</a>
-    </nav>
-  </div>
-</header>
+<nav>
+  <a class="active" href="#aboutme">Sobre mi</a>
+  <a href="#experience">Carrera</a>
+  <a href="#projects">Proyectos</a>
+  <a href="#posts">Publicaciones</a>
+</nav>
 
 <style>
   .active {
     color: black;
   }
 
-  header {
-    margin-bottom: 4rem;
-    position: sticky;
-    top: 0;
-  }
-  header > div {
-    display: flex;
-    padding: 1rem;
-    width: 70vw;
-    margin: auto auto;
-    justify-content: space-between;
-  }
-  header {
-    display: flex;
-  }
   a {
     margin-inline: 1rem;
     cursor: pointer;
@@ -96,7 +72,4 @@
     color: black;
   }
 
-  span {
-    font-weight: 600;
-  }
 </style>

@@ -1,6 +1,6 @@
 ---
-import HeaderNavbar from "../components/common/NavbarHeader.astro"
 import '@fontsource/inter'
+import Header from '../components/common/Header.astro'
 
 const {title} = Astro.props
 ---
@@ -13,7 +13,7 @@ const {title} = Astro.props
     <title>{title}</title>
   </head>
   <body>
-    <HeaderNavbar/>
+    <Header/>
     <main id="content">
       <slot/>
     </main>

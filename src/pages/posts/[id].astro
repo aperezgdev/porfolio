@@ -1,6 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content'
-import MainLayout from '../../layout/MainLayout.astro';
+import PostLayout from '../../layout/PostLayout.astro'
+import Title from '../../components/common/Title.astro'
+import LeftArrowIcon from '../../components/icons/LeftArrowIcon.astro'
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts')
@@ -10,11 +12,51 @@ export async function getStaticPaths() {
   }))
 }
 
-const { post } = Astro.props;
+const { post } = Astro.props
+const { title, publishedDate, estimatedTimeToRead } = post.data
 
 const { Content } = await render(post)
 ---
 
-<MainLayout>
+<PostLayout title={title}>
+  <a href="/#posts">
+    <LeftArrowIcon style="width:40px; height:40px;"/>
+  </a>
+  <div id="title">
+    <Title>{title}</Title>
+    <span id="time-to-read">{estimatedTimeToRead}</span>
+  </div>
+  <span id="date-published">{publishedDate}</span>
   <Content />
-</MainLayout>
+</PostLayou>
+
+<style>
+  #title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #date-published {
+    margin-top: -2rem;
+    font-weight: lighter;
+  }
+
+  span {
+    color: #717171;
+  }
+
+  a {
+    color: black;
+    border-radius: 2rem;
+    display: flex;
+    align-self: start;
+    padding: 0.4rem;
+    margin: -0.4rem;
+  }
+
+  a:hover {
+    background-color: #dfdfdf;
+    transition: 0.5s;
+  }
+</style>
