@@ -1,11 +1,11 @@
 ---
-const {title, id} = Astro.props
+const {title, id, description} = Astro.props
 
 ---
 <a href=`posts/${id}`>
   <article>
     <h3>{title}</h3>
-    <p>Primer post hablando sobre mis objetivos sobre 2025</p>
+    <p>{description}</p>
   </article>
 </a>
 
