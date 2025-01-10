@@ -23,4 +23,10 @@ const posts = await getCollection('posts')
     grid-template-columns: 1fr 1fr;
     margin-bottom: 15rem;
   }
+
+  @media (max-width: 500px) {
+    #posts-list {
+      grid-template-columns: auto;
+    }
+  }
 </style>

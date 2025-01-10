@@ -13,7 +13,7 @@ const {name} = Astro.props
 
 <style>
   .image-project {
-    width: 30rem;
+    width: 10rem;
     height: auto;
     background-color: rgb(218,218,218);
   }
@@ -29,5 +29,24 @@ const {name} = Astro.props
   h3 {
     font-size: 1.5rem;
     margin-top: 0;
+  }
+
+  @media (max-width: 500px) {
+    .image-project {
+      width: 80vw;
+      height: 40vw;
+    }
+
+    .project {
+      grid-template-columns: auto;
+    }
+
+    .description-project { 
+      margin: auto;
+    }
+
+    h3 {
+      margin-top: 1rem;
+    }
   }
 </style>
