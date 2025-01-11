@@ -9,29 +9,28 @@ import ProjectCard from "./ProjectCard.astro";
 ---
 
 <ProjectCard name="Social Readers">
+  <div class="image-container" slot="project-image">
+    Working On!
+  </div>
   <div class="project-badges-list" slot="badge-list">
       <ProjectBadge style="background-color: #2190FF; color: white;">
-        <GolangIcon/>
+        <GolangIcon style="width: 20px; height: 20px;"/>
         Golang
       </ProjectBadge>
       <ProjectBadge style="color: #00D8FF;">
-        <ReactIcon/>
+        <ReactIcon style="width: 20px; height: 20px;"/>
         React
       </ProjectBadge>
   </div>
   <p>
-    Pequeña red social enfocada en los amantes de los libros. Comparte, comenta, recomienda 
-    diferentes libros, encuentra tu siguiente libro para leer y escribe reviews sobre ellos.
-  </p>
-  <p>
-    El objetivo de este proyecto era comprobar la escalibidad que podia conseguir creando una 
-    aplicación con la cantidad de usuarios concurrentes que puede llegar a tener una red social.
+    Comparte, comenta, recomienda diferentes libros, encuentra tu siguiente libro para leer y escribe reviews sobre ellos.
+    El objetivo de este proyecto era comprobar la escalibidad que podia conseguir. 
   </p>
   <div class="project-link">
-    <LinkButton link="github.com" style="color: white; background-color: black;">
+    <LinkButton link="https://github.com/aperezgdev/social-readers" style="color: white; background-color: black;">
       <GithubIcon style="fill: white;"/> Code
     </LinkButton>
-    <LinkButton link="/">
+    <LinkButton>
       <LinkIcon/> Visitar
     </LinkButton>
   </div>
@@ -46,5 +45,18 @@ import ProjectCard from "./ProjectCard.astro";
   .project-link {
     display: flex;
     gap: 1rem;
+    margin-top: auto;
+  }
+
+  .image-container {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+
+    height: 200px;
+    background-color:rgb(218,218,218);
   }
 </style>

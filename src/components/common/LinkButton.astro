@@ -2,7 +2,7 @@
 const {style, link} = Astro.props
 ---
 
-<a href={link} target="_blank" style={style}>
+<a href={link} class=`${link ? '' : 'disabled'}` target="_blank" style={style}>
   <slot/>
 </a>
 
@@ -17,5 +17,9 @@ const {style, link} = Astro.props
     justify-content: space-between;
     text-decoration: none;
     color: black;
+  }
+
+  .disabled {
+    cursor: not-allowed;
   }
 </style>

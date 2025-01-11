@@ -1,0 +1,62 @@
+---
+import LinkButton from "../common/LinkButton.astro";
+import AstroIcon from "../icons/AstroIcon.astro";
+import GithubIcon from "../icons/GithubIcon.astro";
+import LinkIcon from "../icons/LinkIcon.astro";
+import ProjectBadge from "./ProjectBadge.astro";
+import ProjectCard from "./ProjectCard.astro";
+import { Image } from "astro:assets";
+---
+
+<ProjectCard name="Porfolio">
+    <div class="image-container" slot="project-image">
+        <Image src="/images/project-porfolio.webp" alt="Imagen del porfolio" format="webp" width={300} height={200}/>
+    </div>
+  <div class="project-badges-list" slot="badge-list">
+      <ProjectBadge style="background-color: #000000; color: rgb(255, 255, 255);">
+        <AstroIcon style="width: 20px; height: 20px;"/>
+        Astro
+      </ProjectBadge>
+  </div>
+  <p>
+    Este es el portafolio que estas viendo, lo adjunto por si quieres ver el código.
+    El objetivo era aprender a crear paginas estaticas usando Astro.
+  </p>
+  <div class="project-link">
+    <LinkButton link="https://github.com/aperezgdev/porfolio" style="color: white; background-color: black;">
+      <GithubIcon style="fill: white;"/> Code
+    </LinkButton>
+    <LinkButton link="/">
+      <LinkIcon/> Visitar
+    </LinkButton>
+  </div>
+</ProjectCard>
+
+<style>
+    .project-badges-list {
+     display: flex;
+     gap: 1rem;
+     margin-top: -1rem;
+    }
+    
+    .project-link {
+     display: flex;
+     gap: 1rem;
+     margin-top: auto;
+    }
+    
+    .image-container {
+     overflow: hidden;
+    }
+    
+    img {
+     object-fit: cover;
+     object-position: center;
+     transition: transform 0.3s ease;
+    }
+    
+    img:hover {
+     transform: scale(1.1);
+     transform-origin: center;
+    }
+    </style>
