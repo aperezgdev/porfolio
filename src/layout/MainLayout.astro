@@ -1,6 +1,7 @@
 ---
-import HeaderNavbar from "../components/common/NavbarHeader.astro"
 import '@fontsource/inter'
+
+const {title} = Astro.props
 ---
 
 <html lang=es>
@@ -16,10 +17,10 @@ import '@fontsource/inter'
     <meta property="og:description" content="Explora mis proyectos. ¡Conoce mi trabajo!">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Portafolio de Alex Perez Garcia">
-    <title>aperezg.dev</title>
+    <title>{title}</title>
   </head>
   <body>
-    <HeaderNavbar/>
+    <slot name="header"/>
     <main id="content">
       <slot/>
     </main>

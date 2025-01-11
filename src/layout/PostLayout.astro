@@ -1,57 +1,12 @@
 ---
 import '@fontsource/inter'
 import Header from '../components/common/Header.astro'
+import MainLayout from './MainLayout.astro'
 
 const {title} = Astro.props
 ---
 
-<html lang=es>
-  <head>
-    <meta charset='utf-8' />
-    <meta name='generator' content={Astro.generator} />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portafolio profesional de Alex Perez Garcia. Diseño web, desarrollo front-end y proyectos creativos. Descubre mis habilidades y trabajos anteriores.">
-    <meta name="author" content="Alex Perez Garcia">
-    <meta name="keywords" content="portafolio, diseño web, desarrollo backend, backend developer">
-    
-    <meta property="og:title" content="Portafolio de Alex Perez Garcia">
-    <meta property="og:description" content="Explora mis proyectos. ¡Conoce mi trabajo!">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Portafolio de Alex Perez Garcia">
-    <title>{title}</title>
-  </head>
-  <body>
-    <Header/>
-    <main id="content">
-      <slot/>
-    </main>
-  </body>
-</html>
-
-<style is:global>
-  body {
-    font-family: 'Inter', sans-serif;
-    background-image: radial-gradient(rgba(235, 235, 235, 0.3) 2px, transparent 2px), radial-gradient(rgba(235, 235, 235, 0.8) 2px, transparent 2px);
-    background-size: 32px 32px;
-    background-position: 0 0, 16px 16px;
-    background-color: #f3f3f3;
-    margin: 0;
-  }
-  #content {
-    width: 60vw;
-    margin: auto auto;
-    display: flex;
-    flex-direction: column;
-  }
-
-  main > article {
-    margin-bottom: 5rem;
-  }
-
-  
- @media (max-width: 480px) {
-    #content {
-        width: 80vw;
-    }
-  }
-</style>
+<MainLayout title={title}>
+  <Header slot="header"/>
+  <slot/>
+</MainLayout>

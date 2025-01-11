@@ -4,11 +4,13 @@ import MainLayout from "../layout/MainLayout.astro";
 import Experience from "../components/Experience.astro";
 import Projects from "../components/Projects.astro";
 import Posts from "../components/Posts.astro";
+import NavbarHeader from "../components/common/NavbarHeader.astro";
 
 ---
 
-<MainLayout>
-	<AboutMe />
+<MainLayout title="aperezgdev">
+	<NavbarHeader slot="header"/>
+    <AboutMe />
 	<Experience />
 	<Projects/>
 	<Posts/>
